@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/css'
+import { Link } from 'react-router-dom'
 
 const titleColor = 'rgba(94, 229, 181, 0.889)'
 
@@ -18,35 +19,39 @@ const Nav = () => {
           border-bottom: 3px solid ${titleColor};
         `}
       >
-        <div
+        <Link
+          to="/"
           className={css`
             color: ${titleColor};
             font-size: 24px;
             font-weight: bold;
             padding-top: 5px;
             cursor: pointer;
+            text-decoration: none;
           `}
         >
           The Word Search
-        </div>
+        </Link>
         <div
           className={css`
             display: flex;
             justify-content: space-around;
-            & > div {
+            & > a {
               margin-right: 20px;
               cursor: pointer;
               padding: 10px;
+              text-decoration: none;
+              color: black;
             }
-            & > div:hover {
+            & > a:hover {
               background-color: gray;
               color: white;
             }
           `}
         >
-          <div>Word Search Maker</div>
-          <div>More Puzzles</div>
-          <div>Search</div>
+          <Link to="/wordSearchMaker">Word Search Maker</Link>
+          <Link to="/">More Puzzles</Link>
+          <Link to="/">Search</Link>
         </div>
       </header>
     </nav>
